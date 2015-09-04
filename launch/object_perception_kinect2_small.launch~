@@ -1,0 +1,18 @@
+<launch>
+
+  <node name="pose_estimate_vicon" pkg="pose_estimate_vicon" type="pose_estimate_vicon_node" respawn="false" output="screen">
+	<param name="input_topic" value="/kinect2/rgb_rect/image"/>
+	<param name="smallObj" value="true"/>
+	<param name="output_topic" value="/camera/image/objectPose"/>
+	<param name="output_topic_test" value="/camera/image/test"/>
+	<param name="threshold_for_homography" value="1.0"/>
+	<param name="param1" value="560"/>
+	<param name="param2" value="370"/>
+	<param name="param3" value="640"/>
+	<param name="param4" value="450"/>
+	<param name="original_image" value="/home/ir/perception_ws/src/object_perception/data/kinect2_obj01.png"/>
+	<param name="contour_image" value="/home/ir/perception_ws/src/object_perception/data/kinect2_contour01.png"/>
+	<param name="createData" value="true"/>
+
+  </node>
+</launch>

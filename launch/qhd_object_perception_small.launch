@@ -1,0 +1,19 @@
+<launch>
+
+  <node name="pose_estimate_ASTAR" pkg="pose_estimate_ASTAR" type="pose_estimate_ASTAR_node" respawn="false" output="screen">
+	<param name="input_topic" value="/kinect2/qhd/image_color_rect"/>
+	<param name="depth_topic" value="/kinect2/qhd/image_depth_rect"/>
+	<param name="smallObj" value="true"/>
+	<param name="output_topic" value="/camera/image/objectPose"/>
+	<param name="output_topic_test" value="/camera/image/test"/>
+	<param name="threshold_for_homography" value="0.99"/>
+	<param name="param1" value="280"/>
+	<param name="param2" value="125"/>
+	<param name="param3" value="577"/>
+	<param name="param4" value="300"/>
+	<param name="original_image" value="/home/ir/perception_ws/src/pose_estimate_ASTAR/data/small_original.png"/>
+	<param name="contour_image" value="/home/ir/perception_ws/src/pose_estimate_ASTAR/data/small_contour.png"/>
+	<param name="createData" value="true"/>
+    <param name="camera_calib_file" value="/home/ir/kinect2WS/src/iai_kinect2/kinect2_bridge/data/507554242542/calib_color.yaml"/>
+  </node>
+</launch>
