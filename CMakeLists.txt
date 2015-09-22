@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(pose_estimate_ASTAR)
+project(pose_estimation_astar)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -87,7 +87,7 @@ find_package(Boost REQUIRED COMPONENTS system thread)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES pose_estimate_ASTAR
+#  LIBRARIES pose_estimation_astar
  CATKIN_DEPENDS cv_bridge geometry_msgs image_transport message_filters roscpp sensor_msgs std_msgs tf pcl_ros
  DEPENDS system_lib
 )
@@ -104,19 +104,19 @@ include_directories(
 )
 
 ## Declare a cpp library
-# add_library(pose_estimate_ASTAR
-#   src/${PROJECT_NAME}/pose_estimate_ASTAR.cpp
+# add_library(pose_estimation_astar
+#   src/${PROJECT_NAME}/pose_estimation_astar.cpp
 # )
 
 ## Declare a cpp executable
-add_executable(pose_estimate_ASTAR_node src/pose_estimate_ASTAR_node.cpp src/main.cpp src/object_feature.cpp src/object_perception.cpp src/ASTAR_system.cpp)
+add_executable(pose_estimation_astar_node src/pose_estimate_ASTAR_node.cpp src/main.cpp src/object_feature.cpp src/object_perception.cpp src/ASTAR_system.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(pose_estimate_ASTAR_node pose_estimate_ASTAR_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(pose_estimate_ASTAR_node
+target_link_libraries(pose_estimation_astar_node
   ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} opencv_nonfree  ${Boost_LIBRARIES}
 )
 

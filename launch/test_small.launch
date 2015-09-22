@@ -1,0 +1,20 @@
+<launch>
+  <group ns="pickIn">
+  <node name="pose_estimation_astar" pkg="pose_estimation_astar" type="pose_estimation_astar_node" respawn="false" output="screen">
+	<param name="input_topic" value="/kinect2/hd/image_color_rect"/>
+	<param name="depth_topic" value="/kinect2/hd/image_depth_rect"/>
+	<param name="smallObj" value="true"/>
+	<param name="output_topic" value="/kinect2/objectPose_pickIn"/>
+	<param name="threshold_for_homography" value=".5"/>
+    <param name="param1" value="680"/>
+    <param name="param2" value="215"/> 
+    <param name="param3" value="1130"/>
+    <param name="param4" value="850"/>
+	<param name="original_image" value="/home/ir/perception_ws/src/pose_estimation_astar/data/kinect2_obj01.png"/>
+	<param name="contour_image" value="/home/ir/perception_ws/src/pose_estimation_astar/data/kinect2_contour01.png"/>
+	<param name="createData" value="true"/>
+    <param name="camera_calib_file" value="/home/ir/kinect2WS/src/iai_kinect2/kinect2_bridge/data/507554242542/calib_color.yaml"/>
+  </node>
+  </group>
+
+</launch>

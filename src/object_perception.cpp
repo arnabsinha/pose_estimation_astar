@@ -66,7 +66,8 @@ object_perception::object_perception()
 	prepare_contours(contour_img);
     evaluateAxis();
     if(!smallObj){
-        prepareHolderContour("/home/ir/perception_ws/src/object_perception/data/kinect2_objHolder.png");
+        string objHolder = getParam<string> (nh, "axisPoints", "/home/ir/perception_ws/src/object_perception/data/kinect2_objHolder.png");
+        prepareHolderContour(objHolder);
     }
     buf = getParam<string> (nh,"path","/home/ir/perception_ws/src/object_perception/data/");
 
